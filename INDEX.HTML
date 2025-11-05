@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pochiraju Lalith Swaroop — Portfolio</title>
+  <!-- Favicon for browser tab -->
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff; 
+      --card: #ffffff; 
+      --muted: #556272; 
+      --accent: #0ea5a2; 
+      --accent-2: #2563eb; 
+      --glass: rgba(14,165,162,0.06);
+      --max-width: 1100px;
+    }
+    * { box-sizing: border-box }
+    html, body { height: 100% }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial;
+      color: #0b1220;
+      background: linear-gradient(135deg, 
+        rgba(59,194,200,0.5) 0%, 
+        rgba(62,199,224,0.5) 60%, 
+        rgba(100,179,244,0.5) 100%);
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: var(--max-width); margin: 32px auto; padding: 28px }
+    header.nav {
+      display: flex; align-items: center; justify-content: space-between; gap: 18px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .logo {
+      display: flex; flex-direction: column; align-items: flex-start; gap:2px;
+    }
+    .navbar-name {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: #222234;
+      letter-spacing: 0.03em;
+      margin-bottom: 2px;
+    }
+    .navbar-detail {
+      font-family: Inter, Arial, sans-serif;
+      font-size: 11.5px;
+      color: var(--muted);
+      font-weight: 400;
+      margin-top: -2px;
+      margin-left: 1px;
+    }
+    nav ul { display: flex; gap: 14px; list-style: none; margin: 0; padding: 0; }
+    nav a { color: #0b1220; text-decoration: none; font-weight: 600; padding: 8px 12px; border-radius: 8px }
+    nav a:hover { background: var(--glass) }
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: #0ea5a2;
+      margin-left: 8px;
+      line-height: 1;
+    }
+    @media(max-width:900px){
+      nav ul {
+        display: none;
+      }
+      .hamburger {
+        display: inline-block;
+      }
+      nav.open ul {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        background: #fff;
+        position: absolute;
+        top: 56px;
+        right: 32px;
+        border-radius: 12px;
+        box-shadow: 0 6px 30px rgba(16,24,40,0.11);
+        padding: 12px 20px;
+        min-width: 180px;
+        z-index: 100;
+      }
+    }
+    .hero { display: grid; grid-template-columns: 1fr 360px; gap: 28px; align-items: center; margin-top: 20px }
+    .hero .intro h1 { margin: 0; font-size: 34px; line-height: 1.05 }
+    .hero .intro .tag { margin-top: 10px; color: var(--muted); font-size: 16px }
+    .hero .actions { margin-top: 18px; display: flex; gap: 12px }
+    .btn { display: inline-flex; align-items: center; gap: 10px; padding: 10px 16px; border-radius: 10px; border: 0; cursor: pointer; font-weight: 700 }
+    .btn-primary { background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: white }
+    .btn-outline { background: transparent; border: 1px solid #e6eef6; color: #0b1220 }
+    .profile-card {
+      background: #fbfdff;
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 6px 20px rgba(16,24,40,0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 280px;
+      max-width: 340px;
+      margin: auto;
+    }
+    .avatar {
+      width: 120px; height: 120px; border-radius: 16px; overflow: hidden; display: block; margin-bottom: 13px;
+      background: #f3f7fa;
+    }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .name { margin-top: 8px; font-weight: 800; font-size: 20px; text-align: center }
+    .role { color: #556272; font-weight: 600; margin-top: 6px; text-align: center; font-size: 16px; letter-spacing: 0.03em }
+    .desc { margin-top: 14px; color: #778899; font-size: 14px; text-align: center; padding: 0 5px; }
+    .hero-card {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 6px 30px rgba(16,24,40,0.06);
+      padding: 32px 32px 32px 32px;
+      margin-bottom: 30px;
+      border: 1px solid rgba(2,6,23,0.03);
+    }
+    .sections { margin-top: 28px }
+    section { margin-bottom: 34px }
+    .card { background: #ffffff; border-radius: 12px; padding: 20px; box-shadow: 0 6px 30px rgba(16,24,40,0.04); border: 1px solid rgba(2,6,23,0.03) }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px }
+    h2 { margin-top: 0 }
+    .muted { color: var(--muted); }
+    .project { margin-bottom: 14px }
+    .pill { display: inline-block; padding: 6px 10px; border-radius: 999px; font-weight: 700; font-size: 13px; border: 1px solid rgba(2,6,23,0.04); background: rgba(37,99,235,0.05); color: var(--accent-2) }
+    .timeline { border-left: 3px solid rgba(14,165,162,0.12); padding-left: 18px }
+    .timeline-item { margin-bottom: 18px }
+    .timeline-item h4 { margin: 0 }
+    .timeline-item p { margin: 6px 0 0 0; color: var(--muted) }
+    .services { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 14px }
+    .service { padding: 16px; border-radius: 12px; border: 1px solid rgba(2,6,23,0.04); background: linear-gradient(180deg,#ffffff,#fbfdff); 
+      transition: box-shadow 0.22s cubic-bezier(.2,.8,.4,1); }
+    .service:hover {
+      box-shadow: 0 0 25px 0 rgba(14,165,162,0.38), 0 0 0 2px rgba(14,165,162,0.28);
+      z-index:2;
+    }
+    .service h4 { margin: 0 0 8px 0 }
+    .btn, .btn-primary, .btn-outline { transition: box-shadow 0.21s, background 0.18s, color 0.18s; }
+    .btn:hover, .btn-primary:hover, .btn-outline:hover {
+      box-shadow: 0 0 0 4px rgba(14,165,162,0.28), 0 0 8px 2px rgba(14,165,162,0.20);
+      background-color: #0ea5a2;
+      color: #fff;
+    }
+    .contact-cards { display: flex; flex-wrap: wrap; gap: 12px }
+    .contact-card { padding: 14px; border-radius: 10px; border: 1px solid rgba(2,6,23,0.04); min-width: 180px }
+    footer { margin-top: 18px; padding: 18px; text-align: center; color: var(--muted); font-size: 14px }
+    @media(max-width:900px){
+      .hero { grid-template-columns:1fr; }
+      .avatar { width: 100px; height: 100px }
+      .profile-card { max-width: 98vw;}
+      .two-col { grid-template-columns: 1fr; gap: 8px}
+      .services { grid-template-columns: 1fr;}
+    }
+    html { scroll-behavior: smooth }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- Navbar -->
+    <header class="nav">
+      <div class="logo">
+        <span class="navbar-name">Pochiraju Lalith Swaroop</span>
+        <span class="navbar-detail">Robotics & AI Enthusiast • Freelancer</span>
+      </div>
+      <nav>
+        <ul id="main-nav">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="hamburger" id="menu-toggle" aria-label="Open menu">&#9776;</button>
+      </nav>
+    </header>
+    <!-- Hero Section -->
+    <main id="home" class="hero hero-card">
+      <div class="intro">
+        <h1>Pochiraju Lalith Swaroop</h1>
+        <div class="tag">Robotics & AI Enthusiast • Web Developer • Freelancer</div>
+        <div style="margin-top:14px;color:var(--muted);font-size:15px">I design intelligent systems that bridge hardware and software — from robots with advanced mechanisms to machine learning models that see and decide. I take ideas from concept to functioning prototypes and polished web experiences for clients and collaborators.</div>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:lalithswaroop802@gmail.com">✉️ Hire Me</a>
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/lalith-swaroop-2aa86632a" target="_blank">🔗 LinkedIn</a>
+          <a class="btn btn-outline" href="https://www.instagram.com/lalith_pochiraju?igsh=MXNsd2docjdnNHhubw==" target="_blank">📸 Instagram</a>
+        </div>
+        <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+          <span class="pill">Web Development</span>
+          <span class="pill">Robotics & IoT</span>
+          <span class="pill">Machine Learning</span>
+          <span class="pill">Data Analysis</span>
+        </div>
+      </div>
+      <aside class="profile-card">
+        <div class="avatar">
+          <img src="lalith.jpg" alt="Lalith Swaroop">
+        </div>
+        <div class="name">Pochiraju Lalith Swaroop</div>
+        <div class="role">B.Tech Student &bull; Robotics & AI &bull; Freelancer</div>
+        <div class="desc">Available for freelance projects in web development, data analysis, robotics prototyping, and technical coaching.</div>
+      </aside>
+    </main>
+    <!-- Main Sections -->
+    <div class="sections">
+      <section id="about" class="card">
+        <h2>About Me</h2>
+        <p style="font-size:15px;color:#122434;line-height:1.6">
+          I am <strong>Pochiraju Lalith Swaroop</strong>, currently pursuing my <strong>B.Tech</strong> at <strong>Lendi Institute of Engineering and Technology</strong>. I build practical robotics and IoT systems that solve real problems — from automated irrigation systems that conserve water to robots that interact physically with objects. My core strength is combining hands-on hardware design with software intelligence: embedded C/C++ control, sensor integration with ESP modules, and machine learning models for vision-based decisions.
+        </p>
+        <p style="font-size:15px;color:#122434;line-height:1.6">
+          As a freelancer, I offer end-to-end project delivery: requirement analysis, rapid prototyping, firmware and backend development, model training for vision systems, and polished web dashboards to visualize data. I also enjoy mentoring — teaching programming and robotics to beginners and guiding project teams to build functioning prototypes.
+        </p>
+      </section>
+      <section id="education" class="card">
+        <h2>Education</h2>
+        <div class="two-col">
+          <div>
+            <h3>B.Tech (in process)</h3>
+            <p class="muted">Lendi Institute of Engineering and Technology</p>
+            <p style="margin-top:8px;color:var(--muted)">Relevant coursework: Embedded Systems, Data Structures, Machine Learning, Control Systems, Computer Vision basics.</p>
+          </div>
+          <div>
+            <h3>PUC</h3>
+            <p class="muted">Sri Chaitanya Institute</p>
+            <h3 style="margin-top:12px">SSC</h3>
+            <p class="muted">Sri Chaitanya Techno School</p>
+          </div>
+        </div>
+      </section>
+      <section id="projects" class="card">
+        <h2>Projects — Selected Works</h2>
+        <div class="project">
+          <h4>Smart Irrigation System</h4>
+          <p class="muted">IoT • Sensors • Automation</p>
+          <p>Designed an automated irrigation solution using soil moisture sensors, ESP8266, and relay-controlled water pumps. The system monitors soil moisture and weather data to optimize watering schedules, conserve water, and provide remote monitoring through a responsive web dashboard.</p>
+        </div>
+        <div class="project">
+          <h4>Jackfruit Leaf Detection</h4>
+          <p class="muted">Machine Learning • SSD MobileNet • Image Processing</p>
+          <p>Built a real-time leaf detection pipeline using SSD MobileNet trained on custom-labeled images to identify jackfruit leaves and detect common issues. Implemented preprocessing, model training on a laptop, and a lightweight inference routine for near-real-time detection.</p>
+        </div>
+        <div class="project">
+          <h4>Smart Traffic Signal System</h4>
+          <p class="muted">Computer Vision • Priority Control</p>
+          <p>Implemented an intelligent traffic signal controller that uses camera-based congestion detection to prioritize lanes with higher traffic and immediately yield to emergency vehicles detected through visual cues. The system demonstrated improved traffic flow in prototype tests.</p>
+        </div>
+        <div class="project">
+          <h4>Beacon-following X-Link Robot</h4>
+          <p class="muted">Robotics • Navigation</p>
+          <p>Developed a wheeled X-link chassis robot that follows beacons. The robot uses sensors and control logic to follow signals and autonomously navigate predefined paths, ideal for delivery or demonstrative robotics tasks.</p>
+        </div>
+        <div class="project">
+          <h4>Robot with Hand Mechanism</h4>
+          <p class="muted">Robotic Manipulation • Mechatronics</p>
+          <p>Designed and programmed a robot equipped with a manipulator (hand/gripper) capable of picking and placing small objects. The controller integrates servo-driven fingers and a coordinated control scheme for reliable grasping.</p>
+        </div>
+        <div class="project">
+          <h4>Expandable Chassis Robot</h4>
+          <p class="muted">Mechanical Design • Adaptive Chassis</p>
+          <p>Engineered a robot base with an expandable chassis mechanism that adapts its footprint and wheelbase to task requirements. This design increases stability for lifting tasks and reduces size for navigation in tight spaces.</p>
+        </div>
+      </section>
+      <section id="experience" class="card">
+        <h2>Experience & Achievements</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4>IEEE Xplore Event</h4>
+            <p>Attended and actively participated in activities and workshops at an IEEE Xplore event, gaining exposure to research practices and the technical community.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>BITS Vizag — Paper Presentation (1st Prize)</h4>
+            <p>Presented a research paper at BITS Visakhapatnam and won first prize — an achievement that highlights my ability to conduct and communicate research effectively.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>NSRIT — Paper Presentation</h4>
+            <p>Participated in a paper presentation at NSRIT, sharing findings and receiving constructive feedback from peers and faculty.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Lendi Project Expo — 2nd Prize</h4>
+            <p>Exhibited projects in the institute project expo and was awarded second prize for innovation and implementation quality.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Gayatri Vidya Parishad — Project Expo</h4>
+            <p>Demonstrated projects at Gayatri Vidya Parishad project expo, engaging with a wider student and faculty audience.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Research & Publications (Ongoing)</h4>
+            <p>Actively writing and preparing research papers on robotics and vision-based automation, focusing on practical systems that can be replicated by students and small teams.</p>
+          </div>
+        </div>
+      </section>
+      <section id="research" class="card">
+        <h2>Research Interests</h2>
+        <p class="muted">My current research focuses on bridging the gap between machine perception and robotic action. I explore vision-based manipulation, efficient model deployment on embedded devices, and adaptive mechanical designs that allow robots to operate robustly in varied environments.</p>
+        <p>Goals: publish reproducible work, mentor junior researchers, and collaborate with peers to build open-source toolkits for robotics education and prototyping.</p>
+      </section>
+      <section id="services" class="card">
+        <h2>Services I Offer</h2>
+        <div class="services">
+          <div class="service">
+            <h4>Web Development</h4>
+            <p>Responsive websites, landing pages, and dashboards built with semantic HTML and modern CSS practices. I provide pixel-perfect designs and clean, maintainable code.</p>
+          </div>
+          <div class="service">
+            <h4>Data Analysis & Organization</h4>
+            <p>Data cleaning, exploratory analysis, visualization, and reporting. I help transform raw data into actionable insights using Python and visualization tools.</p>
+          </div>
+          <div class="service">
+            <h4>Python Development</h4>
+            <p>Scripting, automation, ML model training and inference. I build end-to-end pipelines that include preprocessing, model training, and deployment-ready code.</p>
+          </div>
+          <div class="service">
+            <h4>C Programming</h4>
+            <p>Embedded systems programming, microcontroller firmware, and performance-focused code for robotics controllers.</p>
+          </div>
+          <div class="service">
+            <h4>Robotics & IoT Development</h4>
+            <p>Hardware selection, sensor integration, control algorithms, and cloud dashboards for remote monitoring and control.</p>
+          </div>
+          <div class="service">
+            <h4>Coaching & Mentorship</h4>
+            <p>One-on-one mentorship and small group coaching for beginners in programming, robotics, and ML. I design project-based learning paths to accelerate skills.</p>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="card">
+        <h2>Contact Me</h2>
+        <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:8px">
+          <div class="contact-card">
+            <strong>Email</strong>
+            <p class="muted" style="margin-top:6px">lalithswaroop802@gmail.com</p>
+            <a href="mailto:lalithswaroop802@gmail.com" class="btn btn-primary" style="margin-top:8px;display:inline-block">✉️ Email Me</a>
+          </div>
+          <div class="contact-card">
+            <strong>LinkedIn</strong>
+            <p class="muted" style="margin-top:6px">linkedin.com/in/lalith-swaroop-2aa86632a</p>
+            <a href="https://www.linkedin.com/in/lalith-swaroop-2aa86632a" target="_blank" class="btn btn-outline" style="margin-top:8px;display:inline-block">View Profile</a>
+          </div>
+          <div class="contact-card">
+            <strong>Instagram</strong>
+            <p class="muted" style="margin-top:6px">@lalith_pochiraju</p>
+            <a href="https://www.instagram.com/lalith_pochiraju?igsh=MXNsd2docjdnNHhubw==" target="_blank" class="btn btn-outline" style="margin-top:8px;display:inline-block">View Profile</a>
+          </div>
+        </div>
+        <p style="margin-top:16px;color:var(--muted)">Interested in hiring me for a freelance project? Click <a href="mailto:lalithswaroop802@gmail.com">Hire Me</a> to start a conversation — I typically respond quickly and can share a short proposal and timeline.</p>
+      </section>
+    </div>
+    <footer>
+      © <strong>Pochiraju Lalith Swaroop</strong> — Robotics & AI • Freelance • <a href="mailto:lalithswaroop802@gmail.com" style="color:#556272;">lalithswaroop802@gmail.com</a>
+    </footer>
+  </div>
+  <script>
+    const hamburger = document.getElementById('menu-toggle');
+    const nav = hamburger.parentElement;
+    hamburger.addEventListener('click', function() {
+      nav.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
