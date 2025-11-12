@@ -6,7 +6,7 @@
   <title>Pochiraju Lalith Swaroop — Portfolio</title>
   <!-- Favicon for browser tab -->
   <link rel="icon" type="image/png" href="logo.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #ffffff; 
@@ -59,7 +59,7 @@
       color: #0b1220; 
       text-decoration: none; 
       font-weight: 600; 
-      padding: 6px 10px; /* Reduced padding */
+      padding: 6px 10px; /* Reduced padding for smaller nav text */
       border-radius: 8px; 
       font-size: 14px; /* Reduced font size */
     }
@@ -242,6 +242,7 @@
       background: rgba(0,0,0,0.12);
       border-radius: 7px;
       padding: 0 11px;
+      user-select: none;
     }
     .certificate-modal .close-btn:hover {
       color: #48cae4;
@@ -302,7 +303,9 @@
       <div class="intro">
         <h1>Pochiraju Lalith Swaroop</h1>
         <div class="tag">Robotics & AI Enthusiast • Web Developer • Freelancer</div>
-        <div style="margin-top:14px;color:var(--muted);font-size:15px">I design intelligent systems that bridge hardware and software — from robots with advanced mechanisms to machine learning models that see and decide. I take ideas from concept to functioning prototypes and polished web experiences for clients and collaborators.</div>
+        <div style="margin-top:14px;color:var(--muted);font-size:15px">
+          I design intelligent systems that bridge hardware and software — from robots with advanced mechanisms to machine learning models that see and decide. I take ideas from concept to functioning prototypes and polished web experiences for clients and collaborators.
+        </div>
         <div class="actions">
           <a class="btn btn-primary" href="mailto:lalithswaroop802@gmail.com">✉️ Hire Me</a>
           <a class="btn btn-outline" href="https://www.linkedin.com/in/lalith-swaroop-2aa86632a" target="_blank">🔗 LinkedIn</a>
@@ -317,7 +320,7 @@
       </div>
       <aside class="profile-card">
         <div class="avatar">
-          <img src="lalith.jpg" alt="Lalith Swaroop">
+          <img src="lalith.jpg" alt="Lalith Swaroop" />
         </div>
         <div class="name">Pochiraju Lalith Swaroop</div>
         <div class="role">B.Tech Student &bull; Robotics & AI &bull; Freelancer</div>
@@ -407,42 +410,42 @@
         <h2>Certificates</h2>
         <div class="certificates-grid">
           <div class="certificate-item">
-            <img src="BITS VIZAG CERTIFICATE.jpg" alt="BITS Vizag Certificate" onclick="openCertificateModal(this)">
+            <img src="BITS VIZAG CERTIFICATE.jpg" alt="BITS Vizag Certificate" onclick="openCertificateModal(this)" />
             <span class="cert-label">BITS Vizag Certificate</span>
           </div>
           <div class="certificate-item">
-            <img src="CYBER SECURITY.jpg" alt="Cyber Security Certificate" onclick="openCertificateModal(this)">
+            <img src="CYBER SECURITY.jpg" alt="Cyber Security Certificate" onclick="openCertificateModal(this)" />
             <span class="cert-label">Cyber Security</span>
           </div>
           <div class="certificate-item">
-            <img src="ENGLISH.jpg" alt="versant Certificate" onclick="openCertificateModal(this)">
+            <img src="ENGLISH.jpg" alt="English Certificate" onclick="openCertificateModal(this)" />
             <span class="cert-label">English Certificate</span>
           </div>
           <div class="certificate-item">
-            <img src="GVP CERTIFICATE.jpg" alt="GVP Certificate" onclick="openCertificateModal(this)">
+            <img src="GVP CERTIFICATE.jpg" alt="GVP Certificate" onclick="openCertificateModal(this)" />
             <span class="cert-label">GVP Certificate</span>
           </div>
           <div class="certificate-item">
-            <img src="JNTU CERTIFICATE.jpg" alt="JNTU Certificate" onclick="openCertificateModal(this)">
+            <img src="JNTU CERTIFICATE.jpg" alt="JNTU Certificate" onclick="openCertificateModal(this)" />
             <span class="cert-label">JNTU Certificate</span>
           </div>
           <div class="certificate-item">
-            <img src="LENDI CERTIFICATE.jpg" alt="project expo Certificate" onclick="openCertificateModal(this)">
+            <img src="LENDI CERTIFICATE.jpg" alt="Lendi Certificate" onclick="openCertificateModal(this)" />
             <span class="cert-label">Lendi Certificate</span>
           </div>
           <div class="certificate-item">
-            <img src="LENDI.jpg" alt="innovation day cerificate" onclick="openCertificateModal(this)">
+            <img src="LENDI.jpg" alt="Lendi" onclick="openCertificateModal(this)" />
             <span class="cert-label">Lendi</span>
           </div>
           <div class="certificate-item">
-            <img src="POCHIRAJU  LALITH SWAROOP .jpg" alt="emplobility skills certificate" onclick="openCertificateModal(this)">
+            <img src="POCHIRAJU  LALITH SWAROOP .jpg" alt="Pochiraju Lalith Swaroop" onclick="openCertificateModal(this)" />
             <span class="cert-label">Pochiraju Lalith Swaroop</span>
           </div>
         </div>
         <!-- Certificate Modal -->
         <div id="certificateModal" class="certificate-modal" onclick="closeCertificateModal()">
           <span class="close-btn" onclick="closeCertificateModal(event)">&times;</span>
-          <img class="modal-content" id="modalImage">
+          <img class="modal-content" id="modalImage" />
           <div id="modalCaption"></div>
         </div>
       </section>
@@ -459,3 +462,75 @@
             <p>Responsive websites, landing pages, and dashboards built with semantic HTML and modern CSS practices. I provide pixel-perfect designs and clean, maintainable code.</p>
           </div>
           <div class="service">
+            <h4>Data Analysis & Organization</h4>
+            <p>Data cleaning, exploratory analysis, visualization, and reporting. I help transform raw data into actionable insights using Python and visualization tools.</p>
+          </div>
+          <div class="service">
+            <h4>Python Development</h4>
+            <p>Scripting, automation, ML model training and inference. I build end-to-end pipelines that include preprocessing, model training, and deployment-ready code.</p>
+          </div>
+          <div class="service">
+            <h4>C Programming</h4>
+            <p>Embedded systems programming, microcontroller firmware, and performance-focused code for robotics controllers.</p>
+          </div>
+          <div class="service">
+            <h4>Robotics & IoT Development</h4>
+            <p>Hardware selection, sensor integration, control algorithms, and cloud dashboards for remote monitoring and control.</p>
+          </div>
+          <div class="service">
+            <h4>Coaching & Mentorship</h4>
+            <p>One-on-one mentorship and small group coaching for beginners in programming, robotics, and ML. I design project-based learning paths to accelerate skills.</p>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="card">
+        <h2>Contact Me</h2>
+        <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:8px">
+          <div class="contact-card">
+            <strong>Email</strong>
+            <p class="muted" style="margin-top:6px">lalithswaroop802@gmail.com</p>
+            <a href="mailto:lalithswaroop802@gmail.com" class="btn btn-primary" style="margin-top:8px;display:inline-block">✉️ Email Me</a>
+          </div>
+          <div class="contact-card">
+            <strong>LinkedIn</strong>
+            <p class="muted" style="margin-top:6px">linkedin.com/in/lalith-swaroop-2aa86632a</p>
+            <a href="https://www.linkedin.com/in/lalith-swaroop-2aa86632a" target="_blank" class="btn btn-outline" style="margin-top:8px;display:inline-block">View Profile</a>
+          </div>
+          <div class="contact-card">
+            <strong>Instagram</strong>
+            <p class="muted" style="margin-top:6px">@lalith_pochiraju</p>
+            <a href="https://www.instagram.com/lalith_pochiraju?igsh=MXNsd2docjdnNHhubw==" target="_blank" class="btn btn-outline" style="margin-top:8px;display:inline-block">View Profile</a>
+          </div>
+        </div>
+        <p style="margin-top:16px;color:var(--muted)">Interested in hiring me for a freelance project? Click <a href="mailto:lalithswaroop802@gmail.com">Hire Me</a> to start a conversation — I typically respond quickly and can share a short proposal and timeline.</p>
+      </section>
+    </div>
+    <footer>
+      © <strong>Pochiraju Lalith Swaroop</strong> — Robotics & AI • Freelance • <a href="mailto:lalithswaroop802@gmail.com" style="color:#556272;">lalithswaroop802@gmail.com</a>
+    </footer>
+  </div>
+  <script>
+    const hamburger = document.getElementById('menu-toggle');
+    const nav = hamburger.parentElement;
+    hamburger.addEventListener('click', function() {
+      nav.classList.toggle('open');
+    });
+
+    function openCertificateModal(img) {
+      var modal = document.getElementById('certificateModal');
+      var modalImg = document.getElementById("modalImage");
+      var captionText = document.getElementById("modalCaption");
+      modal.classList.add('show');
+      modalImg.src = img.src;
+      captionText.innerText = img.alt;
+    }
+    function closeCertificateModal(event) {
+      var modal = document.getElementById('certificateModal');
+      if (event && event.target && (event.target.id === "modalImage" || event.target.id === "modalCaption")) {
+        return;
+      }
+      modal.classList.remove('show');
+    }
+  </script>
+</body>
+</html>
