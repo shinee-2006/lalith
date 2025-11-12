@@ -55,7 +55,14 @@
       margin-left: 1px;
     }
     nav ul { display: flex; gap: 14px; list-style: none; margin: 0; padding: 0; }
-    nav a { color: #0b1220; text-decoration: none; font-weight: 600; padding: 8px 12px; border-radius: 8px }
+    nav a { 
+      color: #0b1220; 
+      text-decoration: none; 
+      font-weight: 600; 
+      padding: 6px 10px; /* Reduced padding */
+      border-radius: 8px; 
+      font-size: 14px; /* Reduced font size */
+    }
     nav a:hover { background: var(--glass) }
     .hamburger {
       display: none;
@@ -396,7 +403,6 @@
           </div>
         </div>
       </section>
-      <!-- New Certificates Section -->
       <section id="certificates" class="card">
         <h2>Certificates</h2>
         <div class="certificates-grid">
@@ -440,7 +446,6 @@
           <div id="modalCaption"></div>
         </div>
       </section>
-      <!-- End Certificates Section -->
       <section id="research" class="card">
         <h2>Research Interests</h2>
         <p class="muted">My current research focuses on bridging the gap between machine perception and robotic action. I explore vision-based manipulation, efficient model deployment on embedded devices, and adaptive mechanical designs that allow robots to operate robustly in varied environments.</p>
@@ -454,77 +459,3 @@
             <p>Responsive websites, landing pages, and dashboards built with semantic HTML and modern CSS practices. I provide pixel-perfect designs and clean, maintainable code.</p>
           </div>
           <div class="service">
-            <h4>Data Analysis & Organization</h4>
-            <p>Data cleaning, exploratory analysis, visualization, and reporting. I help transform raw data into actionable insights using Python and visualization tools.</p>
-          </div>
-          <div class="service">
-            <h4>Python Development</h4>
-            <p>Scripting, automation, ML model training and inference. I build end-to-end pipelines that include preprocessing, model training, and deployment-ready code.</p>
-          </div>
-          <div class="service">
-            <h4>C Programming</h4>
-            <p>Embedded systems programming, microcontroller firmware, and performance-focused code for robotics controllers.</p>
-          </div>
-          <div class="service">
-            <h4>Robotics & IoT Development</h4>
-            <p>Hardware selection, sensor integration, control algorithms, and cloud dashboards for remote monitoring and control.</p>
-          </div>
-          <div class="service">
-            <h4>Coaching & Mentorship</h4>
-            <p>One-on-one mentorship and small group coaching for beginners in programming, robotics, and ML. I design project-based learning paths to accelerate skills.</p>
-          </div>
-        </div>
-      </section>
-      <section id="contact" class="card">
-        <h2>Contact Me</h2>
-        <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:8px">
-          <div class="contact-card">
-            <strong>Email</strong>
-            <p class="muted" style="margin-top:6px">lalithswaroop802@gmail.com</p>
-            <a href="mailto:lalithswaroop802@gmail.com" class="btn btn-primary" style="margin-top:8px;display:inline-block">✉️ Email Me</a>
-          </div>
-          <div class="contact-card">
-            <strong>LinkedIn</strong>
-            <p class="muted" style="margin-top:6px">linkedin.com/in/lalith-swaroop-2aa86632a</p>
-            <a href="https://www.linkedin.com/in/lalith-swaroop-2aa86632a" target="_blank" class="btn btn-outline" style="margin-top:8px;display:inline-block">View Profile</a>
-          </div>
-          <div class="contact-card">
-            <strong>Instagram</strong>
-            <p class="muted" style="margin-top:6px">@lalith_pochiraju</p>
-            <a href="https://www.instagram.com/lalith_pochiraju?igsh=MXNsd2docjdnNHhubw==" target="_blank" class="btn btn-outline" style="margin-top:8px;display:inline-block">View Profile</a>
-          </div>
-        </div>
-        <p style="margin-top:16px;color:var(--muted)">Interested in hiring me for a freelance project? Click <a href="mailto:lalithswaroop802@gmail.com">Hire Me</a> to start a conversation — I typically respond quickly and can share a short proposal and timeline.</p>
-      </section>
-    </div>
-    <footer>
-      © <strong>Pochiraju Lalith Swaroop</strong> — Robotics & AI • Freelance • <a href="mailto:lalithswaroop802@gmail.com" style="color:#556272;">lalithswaroop802@gmail.com</a>
-    </footer>
-  </div>
-  <script>
-    const hamburger = document.getElementById('menu-toggle');
-    const nav = hamburger.parentElement;
-    hamburger.addEventListener('click', function() {
-      nav.classList.toggle('open');
-    });
-
-    // Certificates modal code
-    function openCertificateModal(img) {
-      var modal = document.getElementById('certificateModal');
-      var modalImg = document.getElementById("modalImage");
-      var captionText = document.getElementById("modalCaption");
-      modal.classList.add('show');
-      modalImg.src = img.src;
-      captionText.innerText = img.alt;
-    }
-    function closeCertificateModal(event) {
-      var modal = document.getElementById('certificateModal');
-      // Only close if the background or close button is clicked, not the image itself
-      if (event && event.target && (event.target.id === "modalImage" || event.target.id === "modalCaption")) {
-        return;
-      }
-      modal.classList.remove('show');
-    }
-  </script>
-</body>
-</html>
