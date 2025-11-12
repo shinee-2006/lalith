@@ -161,6 +161,110 @@
       .services { grid-template-columns: 1fr;}
     }
     html { scroll-behavior: smooth }
+
+    /* Certificates section styles */
+    .certificates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px,1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+    .certificate-item {
+      background: #f4faff;
+      border-radius: 14px;
+      padding: 12px 10px 16px 10px;
+      box-shadow: 0 3px 18px rgba(100,179,244,0.10);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: box-shadow 0.28s, background 0.25s;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .certificate-item:hover {
+      background: linear-gradient(90deg, #90e0ef 10%, #48cae4 80%);
+      box-shadow: 0 0 32px 3px #38bdf8, 0 6px 28px rgba(16,24,40,0.12);
+      z-index: 2;
+    }
+    .certificate-item img {
+      max-width: 100%;
+      max-height: 150px;
+      border-radius: 7px;
+      transition: transform 0.23s;
+      box-shadow: 0 0 0 rgba(14,165,162,0);
+    }
+    .certificate-item:hover img {
+      transform: scale(1.04);
+      box-shadow: 0 2px 22px 1px #0ea5a2;
+    }
+    .cert-label {
+      margin-top: 9px;
+      color: #2563eb;
+      font-weight: 700;
+      font-size: 14px;
+      text-align: center;
+    }
+    .certificate-modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0; top: 0; width: 100vw; height: 100vh;
+      background-color: rgba(17, 25, 39, 0.91);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      animation: fadeInModal 0.2s;
+    }
+    @keyframes fadeInModal {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .certificate-modal.show {
+      display: flex;
+    }
+    .certificate-modal .close-btn {
+      position: absolute;
+      top: 32px;
+      right: 44px;
+      color: #fff;
+      font-size: 42px;
+      font-weight: 700;
+      cursor: pointer;
+      z-index: 101;
+      background: rgba(0,0,0,0.12);
+      border-radius: 7px;
+      padding: 0 11px;
+    }
+    .certificate-modal .close-btn:hover {
+      color: #48cae4;
+      background: #fff;
+    }
+    .certificate-modal img#modalImage {
+      max-width: 92vw;
+      max-height: 82vh;
+      margin: 0 auto;
+      border-radius: 18px;
+      box-shadow: 0 0 38px 8px #2563eb80, 0 8px 36px rgba(16,24,40,0.26);
+      background: #fff;
+    }
+    #modalCaption {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 14px;
+      background:rgba(0,0,0,0.18);
+      padding: 6px 20px;
+      border-radius: 14px;
+      text-align: center;
+      max-width: 90vw;
+    }
+    @media (max-width: 700px) {
+      .certificates-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -178,6 +282,7 @@
           <li><a href="#education">Education</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#experience">Experience</a></li>
+          <li><a href="#certificates">Certificates</a></li>
           <li><a href="#research">Research</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -291,6 +396,51 @@
           </div>
         </div>
       </section>
+      <!-- New Certificates Section -->
+      <section id="certificates" class="card">
+        <h2>Certificates</h2>
+        <div class="certificates-grid">
+          <div class="certificate-item">
+            <img src="BITS VIZAG CERTIFICATE.jpg" alt="BITS Vizag Certificate" onclick="openCertificateModal(this)">
+            <span class="cert-label">BITS Vizag Certificate</span>
+          </div>
+          <div class="certificate-item">
+            <img src="CYBER SECURITY.jpg" alt="Cyber Security Certificate" onclick="openCertificateModal(this)">
+            <span class="cert-label">Cyber Security</span>
+          </div>
+          <div class="certificate-item">
+            <img src="ENGLISH.jpg" alt="English Certificate" onclick="openCertificateModal(this)">
+            <span class="cert-label">English Certificate</span>
+          </div>
+          <div class="certificate-item">
+            <img src="GVP CERTIFICATE.jpg" alt="GVP Certificate" onclick="openCertificateModal(this)">
+            <span class="cert-label">GVP Certificate</span>
+          </div>
+          <div class="certificate-item">
+            <img src="JNTU CERTIFICATE.jpg" alt="JNTU Certificate" onclick="openCertificateModal(this)">
+            <span class="cert-label">JNTU Certificate</span>
+          </div>
+          <div class="certificate-item">
+            <img src="LENDI CERTIFICATE.jpg" alt="Lendi Certificate" onclick="openCertificateModal(this)">
+            <span class="cert-label">Lendi Certificate</span>
+          </div>
+          <div class="certificate-item">
+            <img src="LENDI.jpg" alt="Lendi" onclick="openCertificateModal(this)">
+            <span class="cert-label">Lendi</span>
+          </div>
+          <div class="certificate-item">
+            <img src="POCHIRAJU LALITH SWAROOP .jpg" alt="Pochiraju Lalith Swaroop" onclick="openCertificateModal(this)">
+            <span class="cert-label">Pochiraju Lalith Swaroop</span>
+          </div>
+        </div>
+        <!-- Certificate Modal -->
+        <div id="certificateModal" class="certificate-modal" onclick="closeCertificateModal()">
+          <span class="close-btn" onclick="closeCertificateModal(event)">&times;</span>
+          <img class="modal-content" id="modalImage">
+          <div id="modalCaption"></div>
+        </div>
+      </section>
+      <!-- End Certificates Section -->
       <section id="research" class="card">
         <h2>Research Interests</h2>
         <p class="muted">My current research focuses on bridging the gap between machine perception and robotic action. I explore vision-based manipulation, efficient model deployment on embedded devices, and adaptive mechanical designs that allow robots to operate robustly in varied environments.</p>
@@ -357,6 +507,24 @@
     hamburger.addEventListener('click', function() {
       nav.classList.toggle('open');
     });
+
+    // Certificates modal code
+    function openCertificateModal(img) {
+      var modal = document.getElementById('certificateModal');
+      var modalImg = document.getElementById("modalImage");
+      var captionText = document.getElementById("modalCaption");
+      modal.classList.add('show');
+      modalImg.src = img.src;
+      captionText.innerText = img.alt;
+    }
+    function closeCertificateModal(event) {
+      var modal = document.getElementById('certificateModal');
+      // Only close if the background or close button is clicked, not the image itself
+      if (event && event.target && (event.target.id === "modalImage" || event.target.id === "modalCaption")) {
+        return;
+      }
+      modal.classList.remove('show');
+    }
   </script>
 </body>
 </html>
