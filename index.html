@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pochiraju Lalith Swaroop — Portfolio</title>
+  <!-- Favicon for browser tab -->
   <link rel="icon" type="image/png" href="logo.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
@@ -136,8 +137,12 @@
     .timeline-item h4 { margin: 0 }
     .timeline-item p { margin: 6px 0 0 0; color: var(--muted) }
     .services { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 14px }
-    .service { padding: 16px; border-radius: 12px; border: 1px solid rgba(2,6,23,0.04); background: linear-gradient(180deg,#ffffff,#fbfdff); transition: box-shadow 0.22s cubic-bezier(.2,.8,.4,1);}
-    .service:hover { box-shadow: 0 0 25px 0 rgba(14,165,162,0.38), 0 0 0 2px rgba(14,165,162,0.28); z-index:2;}
+    .service { padding: 16px; border-radius: 12px; border: 1px solid rgba(2,6,23,0.04); background: linear-gradient(180deg,#ffffff,#fbfdff); 
+      transition: box-shadow 0.22s cubic-bezier(.2,.8,.4,1); }
+    .service:hover {
+      box-shadow: 0 0 25px 0 rgba(14,165,162,0.38), 0 0 0 2px rgba(14,165,162,0.28);
+      z-index:2;
+    }
     .service h4 { margin: 0 0 8px 0 }
     .btn, .btn-primary, .btn-outline { transition: box-shadow 0.21s, background 0.18s, color 0.18s; }
     .btn:hover, .btn-primary:hover, .btn-outline:hover {
@@ -148,49 +153,12 @@
     .contact-cards { display: flex; flex-wrap: wrap; gap: 12px }
     .contact-card { padding: 14px; border-radius: 10px; border: 1px solid rgba(2,6,23,0.04); min-width: 180px }
     footer { margin-top: 18px; padding: 18px; text-align: center; color: var(--muted); font-size: 14px }
-    /* Certificates Section */
-    .cert-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px, 1fr)); gap: 18px; margin-top: 16px;}
-    .cert-thumb {
-      width: 100%;
-      max-height: 195px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(16,24,40,0.09);
-      transition: box-shadow 0.25s, transform 0.18s;
-      cursor: pointer;
-      background: #f3f7fa;
-    }
-    .cert-thumb:hover {
-      box-shadow: 0 0 25px 3px #0ea5a2, 0 0 0 4px #2563eb;
-      transform: scale(1.03);
-      z-index: 2;
-    }
-    .cert-modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      top:0; left:0;
-      width: 100vw; height: 100vh;
-      background: rgba(22,30,49,0.92);
-      align-items: center;
-      justify-content: center;
-      cursor: zoom-out;
-    }
-    .cert-modal img {
-      max-width: 92vw;
-      max-height: 88vh;
-      border-radius: 12px;
-      box-shadow: 0 0 60px #0ea5a2;
-      background: #fff;
-      border: 2.4px solid #2563eb;
-    }
-    @media (max-width:900px){
+    @media(max-width:900px){
       .hero { grid-template-columns:1fr; }
       .avatar { width: 100px; height: 100px }
       .profile-card { max-width: 98vw;}
       .two-col { grid-template-columns: 1fr; gap: 8px}
       .services { grid-template-columns: 1fr;}
-      .cert-thumb { max-height: 115px; }
     }
     html { scroll-behavior: smooth }
   </style>
@@ -209,7 +177,6 @@
           <li><a href="#about">About</a></li>
           <li><a href="#education">Education</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#certificates">Certificates</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#research">Research</a></li>
           <li><a href="#services">Services</a></li>
@@ -238,13 +205,14 @@
       </div>
       <aside class="profile-card">
         <div class="avatar">
-          <img src="POCHIRAJU LALITH SWAROOP.jpg" alt="Lalith Swaroop">
+          <img src="lalith.jpg" alt="Lalith Swaroop">
         </div>
         <div class="name">Pochiraju Lalith Swaroop</div>
         <div class="role">B.Tech Student &bull; Robotics & AI &bull; Freelancer</div>
         <div class="desc">Available for freelance projects in web development, data analysis, robotics prototyping, and technical coaching.</div>
       </aside>
     </main>
+    <!-- Main Sections -->
     <div class="sections">
       <section id="about" class="card">
         <h2>About Me</h2>
@@ -294,7 +262,41 @@
           <p>Engineered a robot base with an expandable chassis mechanism that adapts its footprint and wheelbase to task requirements. This design increases stability for lifting tasks and reduces size for navigation in tight spaces.</p>
         </div>
       </section>
-      <section id="certificates" class="card">
+      <section id="experience" class="card">
+        <h2>Experience & Achievements</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4>IEEE Xplore Event</h4>
+            <p>Attended and actively participated in activities and workshops at an IEEE Xplore event, gaining exposure to research practices and the technical community.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>BITS Vizag — Paper Presentation (1st Prize)</h4>
+            <p>Presented a research paper at BITS Visakhapatnam and won first prize — an achievement that highlights my ability to conduct and communicate research effectively.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>NSRIT — Paper Presentation</h4>
+            <p>Participated in a paper presentation at NSRIT, sharing findings and receiving constructive feedback from peers and faculty.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Lendi Project Expo — 2nd Prize</h4>
+            <p>Exhibited projects in the institute project expo and was awarded second prize for innovation and implementation quality.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Gayatri Vidya Parishad — Project Expo</h4>
+            <p>Demonstrated projects at Gayatri Vidya Parishad project expo, engaging with a wider student and faculty audience.</p>
+          </div>
+          <div class="timeline-item">
+            <h4>Research & Publications (Ongoing)</h4>
+            <p>Actively writing and preparing research papers on robotics and vision-based automation, focusing on practical systems that can be replicated by students and small teams.</p>
+          </div>
+        </div>
+      </section>
+      <section id="research" class="card">
+        <h2>Research Interests</h2>
+        <p class="muted">My current research focuses on bridging the gap between machine perception and robotic action. I explore vision-based manipulation, efficient model deployment on embedded devices, and adaptive mechanical designs that allow robots to operate robustly in varied environments.</p>
+        <p>Goals: publish reproducible work, mentor junior researchers, and collaborate with peers to build open-source toolkits for robotics education and prototyping.</p>
+      </section>
+ <section id="certificates" class="card">
         <h2>Certificates</h2>
         <div class="cert-grid">
           <img src="BITS VIZAG CERTIFICATE.jpg" alt="BITS Vizag Certificate" class="cert-thumb" />
@@ -310,33 +312,67 @@
           <img id="cert-modal-img" src="" alt="Full Certificate" />
         </div>
       </section>
-      <!-- ...other sections (Experience, Research, Services, Contact) unchanged... -->
-      <!-- Place previous sections here for Experience, Research, Services, and Contact -->
-      <!-- Footer remains unchanged -->
+      <section id="services" class="card">
+        <h2>Services I Offer</h2>
+        <div class="services">
+          <div class="service">
+            <h4>Web Development</h4>
+            <p>Responsive websites, landing pages, and dashboards built with semantic HTML and modern CSS practices. I provide pixel-perfect designs and clean, maintainable code.</p>
+          </div>
+          <div class="service">
+            <h4>Data Analysis & Organization</h4>
+            <p>Data cleaning, exploratory analysis, visualization, and reporting. I help transform raw data into actionable insights using Python and visualization tools.</p>
+          </div>
+          <div class="service">
+            <h4>Python Development</h4>
+            <p>Scripting, automation, ML model training and inference. I build end-to-end pipelines that include preprocessing, model training, and deployment-ready code.</p>
+          </div>
+          <div class="service">
+            <h4>C Programming</h4>
+            <p>Embedded systems programming, microcontroller firmware, and performance-focused code for robotics controllers.</p>
+          </div>
+          <div class="service">
+            <h4>Robotics & IoT Development</h4>
+            <p>Hardware selection, sensor integration, control algorithms, and cloud dashboards for remote monitoring and control.</p>
+          </div>
+          <div class="service">
+            <h4>Coaching & Mentorship</h4>
+            <p>One-on-one mentorship and small group coaching for beginners in programming, robotics, and ML. I design project-based learning paths to accelerate skills.</p>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="card">
+        <h2>Contact Me</h2>
+        <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:8px">
+          <div class="contact-card">
+            <strong>Email</strong>
+            <p class="muted" style="margin-top:6px">lalithswaroop802@gmail.com</p>
+            <a href="mailto:lalithswaroop802@gmail.com" class="btn btn-primary" style="margin-top:8px;display:inline-block">✉️ Email Me</a>
+          </div>
+          <div class="contact-card">
+            <strong>LinkedIn</strong>
+            <p class="muted" style="margin-top:6px">linkedin.com/in/lalith-swaroop-2aa86632a</p>
+            <a href="https://www.linkedin.com/in/lalith-swaroop-2aa86632a" target="_blank" class="btn btn-outline" style="margin-top:8px;display:inline-block">View Profile</a>
+          </div>
+          <div class="contact-card">
+            <strong>Instagram</strong>
+            <p class="muted" style="margin-top:6px">@lalith_pochiraju</p>
+            <a href="https://www.instagram.com/lalith_pochiraju?igsh=MXNsd2docjdnNHhubw==" target="_blank" class="btn btn-outline" style="margin-top:8px;display:inline-block">View Profile</a>
+          </div>
+        </div>
+        <p style="margin-top:16px;color:var(--muted)">Interested in hiring me for a freelance project? Click <a href="mailto:lalithswaroop802@gmail.com">Hire Me</a> to start a conversation — I typically respond quickly and can share a short proposal and timeline.</p>
+      </section>
     </div>
     <footer>
       © <strong>Pochiraju Lalith Swaroop</strong> — Robotics & AI • Freelance • <a href="mailto:lalithswaroop802@gmail.com" style="color:#556272;">lalithswaroop802@gmail.com</a>
     </footer>
   </div>
   <script>
-    // Hamburger menu for navbar
     const hamburger = document.getElementById('menu-toggle');
     const nav = hamburger.parentElement;
     hamburger.addEventListener('click', function() {
       nav.classList.toggle('open');
     });
-    // Certificate fullscreen logic
-    document.querySelectorAll('.cert-thumb').forEach(function(img){
-      img.addEventListener('click', function(e){
-        var modal = document.getElementById('cert-modal');
-        var modalImg = document.getElementById('cert-modal-img');
-        modalImg.src = img.src;
-        modal.style.display = 'flex';
-      });
-    });
-    function closeCertModal() {
-      document.getElementById('cert-modal').style.display = 'none';
-    }
   </script>
 </body>
 </html>
